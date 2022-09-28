@@ -1,0 +1,150 @@
+
+body {
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+/* Toggle Styles */
+
+#viewport {
+  padding-left: 250px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#content {
+  width: 100%;
+  position: relative;
+  margin-right: 0;
+}
+
+/* Sidebar Styles */
+
+#sidebar {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 250px;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #37474F;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar header {
+  background-color: #263238;
+  font-size: 20px;
+  line-height: 52px;
+  text-align: center;
+}
+
+#sidebar header a {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+}
+
+#sidebar header a:hover {
+  color: #fff;
+}
+
+#sidebar .nav{
+
+}
+
+#sidebar .nav a{
+  background: none;
+  border-bottom: 1px solid #455A64;
+  color: #CFD8DC;
+  font-size: 16px;
+  padding: 16px 24px;
+}
+
+#sidebar .nav a:hover{
+  background: none;
+  color: #ECEFF1;
+}
+
+#sidebar .nav li a{
+  display : block;
+  margin-right: 16px;
+  text-transfrom: uppercase;
+  text-decoration: none;
+}
+
+#table_content {
+  margin-right:30px;
+}
+
+#tables{
+  padding-left:25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#add_form{
+background-color: #37474F;
+border-radius: 20px;
+box-sizing: border-box;
+margin-top:25px;
+margin-right:350px;
+margin-left:350px;
+margin-down:50px;
+padding-left:25px;
+padding-right: 25px;
+padding-top: 25px;
+padding-bottom: 25px;
+}
+
+#add_form label{
+color: #fff;
+}
+
+.log_in_from{
+background-color: #37474F;
+border-radius: 20px;
+box-sizing: border-box;
+}
+
+
+/* filter form */
+
+#filter_from{
+margin:20px;
+}
+
+#filter_from form {
+  display: flex;
+  flex-wrap: wrap;
+
+
+  & > input {
+    flex: 1 1 10ch;
+    margin: .5rem;
+
+    &[type="email"] {
+      flex: 3 1 30ch;
+    }
+  }
+}
+
+input {
+  border: none;
+  background: hsl(0 0% 93%);
+  border-radius: .25rem;
+  padding: .75rem 1rem;
+
+  &[type="submit"] {
+    background: hotpink;
+    color: white;
+    box-shadow: 0 .75rem .5rem -.5rem hsl(0 50% 80%);
+  }
+}

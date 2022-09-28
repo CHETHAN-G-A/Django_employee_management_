@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+<div id="add_form">
+<form action="/add_emp" method="post">
+    {% csrf_token %}
+    <label class="form-label">First name:</label><br>
+    <input type="text" name="first_name" class="form-control form-control-sm" placeholder="First Name"><br>
+    <label >Last name:</label><br>
+    <input type="text" name="last_name" class="form-control form-control-sm"><br>
+    <label for="department">Department:</label><br>
+    <select name="dept" id="department">
+        {% for dept in depts %}
+        <option value="volvo">{{dept.name}}</option>
+        {% endfor %}
+    </select><br><br>
+    <label class="form-label">Salary</label><br>
+    <input type="number" name="salary" class="form-control form-control-sm"><br>
+    <label class="form-label">Bonus</label><br>
+    <input type="number" name="bonus" class="form-control form-control-sm"><br>
+    <label for="role">Role:</label><br>
+    <select name="role" id="role">
+        {% for role in roles %}
+        <option value="volvo">{{role.name}}</option>
+        {% endfor %}
+    </select><br><br>
+    <label class="form-label">Phone</label><br>
+    <input type="text" name="phone" class="form-control form-control-sm"><br>
+    <input type="submit" value="Submit">
+</div>
+</div>
+
+{% endblock content %}
