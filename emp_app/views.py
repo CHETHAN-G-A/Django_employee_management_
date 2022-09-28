@@ -24,10 +24,37 @@ def add_emp(request):
         phone = int(request.POST['phone'])
 
         new_emp = Employee(first_name=first_name,last_name=last_name,dept_id=dept,salary=salary,bonus=bonus,role_id=role,phone=phone)
+        print(new_emp)
         new_emp.save()
         return redirect('all_emp')
 
     return render(request,'add_emp.html', {'depts':department , 'roles':role})
+
+def update_emp(request , emp_id=0):
+    employees = Employee.objects.all()
+    if emp_id:
+        return redirect('update_form_emp',emp_id=emp_id)
+    return render(request, 'update_emp.html', {'emps':employees})
+
+def update_form_emp(request , emp_id=0):
+    employee = Employee.get_employee(emp_id)
+    department = Department.objects.all()
+    role = Role.objects.all()
+
+    if request.method == 'POST':
+
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        dept = request.POST['dept']
+        salary = int(request.POST['salary'])
+        bonus = int(request.POST['bonus'])
+        role = request.POST['role']
+        phone = int(request.POST['phone'])
+
+        Employee.objects.filter(id=emp_id).update(first_name=first_name,last_name=last_name,dept_id=dept,salary=salary,bonus=bonus,role_id=role,phone=phone)
+
+        return redirect('all_emp')
+    return render(request, 'updated.html', {'depts': department, 'roles': role, 'emp': employee})
 
 def del_emp(request , emp_id=0):
     employees = Employee.objects.all()

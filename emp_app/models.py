@@ -28,6 +28,12 @@ class Employee(models.Model):
     def __str__(self):
         return "%s %s %s" %(self.first_name, self.last_name, self.phone)
 
+    def get_employee(emp_id):
+        try:
+            return  Employee.objects.get(id=emp_id)
+        except:
+            return False
+
 # user table
 class Customer(models.Model):
     first_name = models.CharField(max_length=100, null=False)
@@ -41,3 +47,4 @@ class Customer(models.Model):
             return Customer.objects.get(e_mail=e_mail)
         except:
             return False
+

@@ -3,38 +3,30 @@
 {% block content %}
 <div class="container">
 <div id="add_form">
-<form action="/add_emp" method="post">
+<form action="/update_form_emp/{{emp.id}}" method="post">
     {% csrf_token %}
     <label class="form-label">First name:</label><br>
-    <input type="text" name="first_name" class="form-control form-control-sm" placeholder="First Name"><br>
+    <input type="text" name="first_name" class="form-control form-control-sm" placeholder={{emp.first_name}}><br>
     <label >Last name:</label><br>
-    <input type="text" name="last_name" class="form-control form-control-sm"><br>
+    <input type="text" name="last_name" class="form-control form-control-sm" placeholder={{emp.last_name}}><br>
     <label for="department">Department:</label><br>
     <select name="dept" id="department">
         {% for dept in depts %}
-<<<<<<< HEAD
-        <option value="volvo">{{dept.name}}</option>
-=======
         <option value="{{dept.id}}">{{dept.name}}</option>
->>>>>>> 3adaeac (Initial commit)
         {% endfor %}
     </select><br><br>
     <label class="form-label">Salary</label><br>
-    <input type="number" name="salary" class="form-control form-control-sm"><br>
+    <input type="number" name="salary" class="form-control form-control-sm" placeholder={{emp.salary}}><br>
     <label class="form-label">Bonus</label><br>
-    <input type="number" name="bonus" class="form-control form-control-sm"><br>
+    <input type="number" name="bonus" class="form-control form-control-sm" placeholder={{emp.bonus}}><br>
     <label for="role">Role:</label><br>
     <select name="role" id="role">
         {% for role in roles %}
-<<<<<<< HEAD
-        <option value="volvo">{{role.name}}</option>
-=======
         <option value="{{role.id}}">{{role.name}}</option>
->>>>>>> 3adaeac (Initial commit)
         {% endfor %}
     </select><br><br>
     <label class="form-label">Phone</label><br>
-    <input type="text" name="phone" class="form-control form-control-sm"><br>
+    <input type="text" name="phone" class="form-control form-control-sm" placeholder={{emp.phone}}><br>
     <input type="submit" value="Submit">
 </div>
 </div>
